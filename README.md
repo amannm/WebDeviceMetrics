@@ -16,7 +16,7 @@ In general this is the baseline zoom applied at the system level whose value was
 Page Zoom:
 Has traditionally been limited to desktop style browsers and allows users to adjust the size of webpage features on the fly, usually using some sort of slider or keyboard shortcut.
 
-RANT: The annoying as hell corporation specific attitudes towards simple as hell device display metrics
+Corporation specific attitudes towards providing device metrics via Javascript
 =====
 
 Apple:
