@@ -1,29 +1,6 @@
 //Author: Amann Malik
 //https://github.com/amannm/WebDeviceMetrics
 
-
-var snapZoom = function(number, startIndex, arr) {
-    if (Math.abs(arr[startIndex] - number) > Math.abs(arr[startIndex + 1] - number)) {
-        for (var count = startIndex + 1; count < arr.length - 1; count++) {
-            if (Math.abs(arr[count] - number) < Math.abs(arr[count + 1] - number)) {
-                return arr[count];
-            }
-        }
-    }
-    else {
-        if (Math.abs(arr[startIndex] - number) > Math.abs(arr[startIndex - 1] - number)) {
-            for (var count = startIndex - 1; count > 0; count--) {
-                if (Math.abs(arr[count] - number) < Math.abs(arr[count - 1] - number)) {
-                    return arr[count];
-                }
-            }
-        }
-        else {
-            return arr[startIndex];
-        }
-    }
-};
-
 var getZoom = function() {
     if ('deviceXDPI' in screen) {
         //Microsoft
@@ -103,6 +80,28 @@ var getZoom = function() {
             return function() {
                 return 1;
             };
+        }
+    }
+};
+
+var snapZoom = function(number, startIndex, arr) {
+    if (Math.abs(arr[startIndex] - number) > Math.abs(arr[startIndex + 1] - number)) {
+        for (var count = startIndex + 1; count < arr.length - 1; count++) {
+            if (Math.abs(arr[count] - number) < Math.abs(arr[count + 1] - number)) {
+                return arr[count];
+            }
+        }
+    }
+    else {
+        if (Math.abs(arr[startIndex] - number) > Math.abs(arr[startIndex - 1] - number)) {
+            for (var count = startIndex - 1; count > 0; count--) {
+                if (Math.abs(arr[count] - number) < Math.abs(arr[count - 1] - number)) {
+                    return arr[count];
+                }
+            }
+        }
+        else {
+            return arr[startIndex];
         }
     }
 };
